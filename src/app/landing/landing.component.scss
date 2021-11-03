@@ -1,0 +1,17 @@
+.Landing-Page {
+  height: 100%;
+}
+
+.child-1,
+.child-2 {
+  border: 1px solid black;
+}
+
+.child-1>button,
+.child-2>button {
+  padding: 3%;
+  border-radius: 5px;
+  border: none;
+  background-color: yellowgreen;
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "indobytes-6dc8b": {
+      "hosting": {
+        "indobytes-users": [
+          "indobytes-6dc8b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "indobytes-6dc8b"
+  }
+}

@@ -1,0 +1,30 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="signin-form">
+  <form [formGroup]="signInForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="name">User Name / Email ID</label>
+      <input type="text" formControlName="name" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">User Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <a routerLink="../reset" class="forgot-btn">Forgot Password</a>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="submit-btn">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Login
+      </button>
+      <a routerLink="../landing" class="cancel-btn">Go Back</a>
+    </div>
+  </form>
+</div>

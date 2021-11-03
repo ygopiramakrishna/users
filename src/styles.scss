@@ -1,0 +1,81 @@
+/* Global Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: lightyellow;
+}
+
+// div {
+  div>form {
+    margin-top: 1vh;
+
+    .form-group {
+      margin-bottom: 1vh;
+
+      .form-control {
+        display: block;
+        width: 20vw;
+        height: 3vh;
+        padding: 1vh 1vw;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 6px;
+      }
+
+      .form-control.is-invalid {
+        border-color: red;
+      }
+
+      .form-control.is-invalid~.invalid-feedback {
+        font-size: 2vh;
+        color: red;
+      }
+    }
+
+    .submit-btn {
+      vertical-align: middle;
+      border: 1px solid transparent;
+      padding: 1vh 1vw;
+      font-size: 16px;
+      line-height: 1.5;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      background-color: dodgerblue;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    .cancel-btn {
+      vertical-align: middle;
+      padding: 1vh 1vw;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+// }
+
+.cdk-overlay-container {
+  .cdk-overlay-connected-position-bounding-box {
+    width: 18vw !important;
+  }
+
+  .cdk-overlay-pane .myPanelClass {
+    margin-left: 38vw;
+
+    mat-option {
+      width: 18vw;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="30px">
+  <div fxLayout="row" class="header">
+    <div fxFlex="45">
+      <p (click)="changePassword(true)">Change Password</p>
+    </div>
+    <div fxFlex="45">
+      <p (click)="signout()">Sign Out</p>
+      <i class="fal fa-home"></i>
+    </div>
+    <div fxFlex>
+      <img height="50" width="50" src="">
+    </div>
+  </div>
+  <div fxLayout="row" class="admin-table" *ngIf="isAdmin && !passwordScreen">
+    <table>
+      <tr>
+        <th>
+          S.No
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          User Name
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+      <tr *ngFor="let item of data">
+        <td>{{item.no}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.username}}</td>
+        <td>
+          <i></i>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div fxLayout="row" *ngIf="passwordScreen">
+    <form [formGroup]="passwordForm" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="old">Old Password</label>
+        <input type="password" formControlName="old" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.old.errors }" />
+        <div *ngIf="submitted && f.old.errors" class="invalid-feedback">
+          <div *ngIf="f.old.errors.required">Old Password is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="new">New Password</label>
+        <input type="password" formControlName="new" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.new.errors }" />
+        <div *ngIf="submitted && f.new.errors" class="invalid-feedback">
+          <div *ngIf="f.new.errors.required">New Password is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="submit-btn">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Change Password
+        </button>
+        <a (click)="changePassword(false)" class="cancel-btn">Go Back</a>
+      </div>
+    </form>
+  </div>
+</div>
